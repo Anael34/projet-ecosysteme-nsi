@@ -1,5 +1,5 @@
 import random
-#test
+#test2
 # --- 1. CLASSE SPECIES ---
 class Species:
     def __init__(self, name, reproduction_rate, lifespan, diet=None, predation_rate=0.0):
