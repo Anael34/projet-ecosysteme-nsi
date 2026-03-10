@@ -18,6 +18,7 @@ class Individual:
         self.species = species
         self.age = 0
         self.is_alive = True
+        self.have_eaten = False
 
     def vieillir(self):
         self.age += 1
@@ -25,10 +26,12 @@ class Individual:
             self.is_alive = False
 
     def reproduire(self):
-        if self.is_alive and random.random() < self.species.reproduction_rate:
-            return Individual(self.species)
+        if self.is_alive:
+            if random.random() < self.species.reproduction_rate:
+                if self.have_eaten:
+                    return Individual(self.species)
         return None
-
+    
     def manger(self, available_prey):
         if not self.is_alive or not self.species.diet:
             return
@@ -43,6 +46,7 @@ class Individual:
             if proies_possibles:
                 victime = random.choice(proies_possibles)
                 victime.is_alive = False
+                self.have_eaten = True
         
 # --- 3. LE MOTEUR (Ecosystem) ---
 class Ecosystem:
@@ -98,18 +102,18 @@ class Ecosystem:
 # --- CONFIGURATION ET LANCEMENT ---
 
 # Définition des espèces
-plante = Species("Plante", 0.4, 12, [])
-insecte = Species("Insecte", 0.5, 15, ["Plante"], 0.3)
+plante = Species("Plante", 0.55, 15, [])
+insecte = Species("Insecte", 0.4, 12, ["Plante"], 0.3)
 grenouille = Species("Grenouille", 0.35, 40, ["Insecte"], 0.2)
-serpent = Species("Serpent", 0.15, 70, ["Grenouille", "Souris"], 0.1)
-souris = Species("Souris", 0.35, 25, ["Plante"], 0.1)
-aigle = Species("Aigle", 0.015, 200, ["Serpent", "Souris"], 0.05)
+serpent = Species("Serpent", 0.15, 70, ["Souris"], 0.1)
+souris = Species("Souris", 0.35, 25, [], 0.1)
+aigle = Species("Aigle", 0.015, 200, ["Serpent"], 0.05)
 lapin = Species("Lapin", 0.3, 30, ["Plante"], 0.1)
-loup = Species("Loup", 0.004, 150, ["Cerf", "Lapin"], 0.05)
+loup = Species("Loup", 0.004, 150, ["Lapin"], 0.05)
 
 # Création du monde
 monde = Ecosystem()
-monde.add_population(plante, 50)
+monde.add_population(plante, 100)
 monde.add_population(insecte, 20)
 monde.add_population(lapin, 10)
 monde.add_population(loup, 2)
@@ -120,7 +124,7 @@ monde.add_population(serpent, 5)
 print("--- DÉBUT DE LA SIMULATION ---")
 monde.print_stats()
 
-for jour in range(1, 7):
+for jour in range(1, 30):
     print(f"\n--- JOUR {jour} ---")
     monde.run_day()
     monde.print_stats()
