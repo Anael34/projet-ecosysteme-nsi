@@ -1,4 +1,5 @@
 import random
+import time 
 
 # --- 1. CLASSE SPECIES ---
 class Species:
@@ -59,6 +60,8 @@ class Ecosystem:
 
     def run_day(self):
         
+        time.sleep(1.5)
+
         new_babies = []
         
         random.shuffle(self.population)
@@ -79,7 +82,14 @@ class Ecosystem:
 
             bebe = individual.reproduire()
             if bebe:
-                new_babies.append(bebe)
+                compteur = 0
+
+                for ind in self.population:
+                    if ind.species.name == bebe.species.name and ind.is_alive:
+                        compteur += 1
+
+                if compteur < 200:
+                    new_babies.append(bebe)
 
         if individual.species.diet:   # seulement les animaux
             if individual.a_mange:
@@ -138,7 +148,7 @@ monde.add_population(aigle, 2)
 print("--- DÉBUT DE LA SIMULATION ---")
 monde.print_stats()
 
-for jour in range(1, 100):
+for jour in range(1, 200):
     print(f"\n--- JOUR {jour} ---")
     monde.run_day()
     monde.print_stats()
