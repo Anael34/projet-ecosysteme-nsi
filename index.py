@@ -19,6 +19,7 @@ class Individual:
         self.age = 0
         self.is_alive = True
         self.have_eaten = False
+        self.hunger=0
 
     def vieillir(self):
         self.age += 1
@@ -58,9 +59,13 @@ class Ecosystem:
             self.population.append(Individual(species))
 
     def run_day(self):
+        
         new_babies = []
         
         random.shuffle(self.population)
+
+        for individual in self.population:
+            individual.a_mange = False
 
         # --- Phase 1 : Action (Vieillir, Manger, Reproduire) ---
         for individual in self.population:
