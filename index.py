@@ -29,8 +29,7 @@ class Individual:
     def reproduire(self):
         if self.is_alive:
             if random.random() < self.species.reproduction_rate:
-                if self.have_eaten:
-                    return Individual(self.species)
+                return Individual(self.species)
         return None
     
     def manger(self, available_prey):
