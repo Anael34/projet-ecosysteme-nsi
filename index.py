@@ -82,6 +82,14 @@ class Ecosystem:
             if bebe:
                 new_babies.append(bebe)
 
+        if individual.species.diet:   # seulement les animaux
+            if individual.a_mange:
+                individual.faim = 0
+            else:
+                individual.faim += 1
+                if individual.faim >= 5:
+                    individual.is_alive = False
+
         # --- Phase 2 : Nettoyage (VERSION "VIEILLE ÉCOLE") ---
         # C'est ici que j'ai changé le code pour le rendre plus lisible
         
