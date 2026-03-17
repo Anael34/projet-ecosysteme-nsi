@@ -84,10 +84,10 @@ class Ecosystem:
 
         if individual.species.diet:   # seulement les animaux
             if individual.a_mange:
-                individual.faim = 0
+                individual.hunger = 0
             else:
-                individual.faim += 1
-                if individual.faim >= 5:
+                individual.hunger += 1
+                if individual.hunger >= 5:
                     individual.is_alive = False
 
         # --- Phase 2 : Nettoyage (VERSION "VIEILLE ÉCOLE") ---
