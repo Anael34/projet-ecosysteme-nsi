@@ -18,7 +18,7 @@ class Individual:
         self.species = species
         self.age = 0
         self.is_alive = True
-        self.have_eaten = False
+        self.a_mange = False
         self.hunger=0
 
     def vieillir(self):
@@ -46,7 +46,7 @@ class Individual:
             if proies_possibles:
                 victime = random.choice(proies_possibles)
                 victime.is_alive = False
-                self.have_eaten = True
+                self.a_mange = True
         
 # --- 3. LE MOTEUR (Ecosystem) ---
 class Ecosystem:
@@ -138,7 +138,7 @@ monde.add_population(aigle, 2)
 print("--- DÉBUT DE LA SIMULATION ---")
 monde.print_stats()
 
-for jour in range(1, 30):
+for jour in range(1, 100):
     print(f"\n--- JOUR {jour} ---")
     monde.run_day()
     monde.print_stats()
