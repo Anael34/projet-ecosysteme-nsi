@@ -115,23 +115,25 @@ class Ecosystem:
 # --- CONFIGURATION ET LANCEMENT ---
 
 # Définition des espèces
-plante = Species("Plante", 0.55, 15, [])
-insecte = Species("Insecte", 0.4, 12, ["Plante"], 0.3)
-grenouille = Species("Grenouille", 0.35, 40, ["Insecte"], 0.2)
-serpent = Species("Serpent", 0.15, 70, ["Souris"], 0.1)
-souris = Species("Souris", 0.35, 25, [], 0.1)
-aigle = Species("Aigle", 0.015, 200, ["Serpent"], 0.05)
-lapin = Species("Lapin", 0.3, 30, ["Plante"], 0.1)
-loup = Species("Loup", 0.004, 150, ["Lapin"], 0.05)
+plante = Species("Plante", 0.25, 50, [])
+insecte = Species("Insecte", 0.18, 20, ["Plante"], 0.5)
+souris = Species("Souris", 0.12, 30, ["Plante"], 0.4)
+lapin = Species("Lapin", 0.10, 35, ["Plante"], 0.4)
+grenouille = Species("Grenouille", 0.08, 35, ["Insecte"], 0.5)
+serpent = Species("Serpent", 0.05, 60, ["Grenouille", "Souris"], 0.35)
+loup = Species("Loup", 0.02, 90, ["Lapin"], 0.25)
+aigle = Species("Aigle", 0.01, 120, ["Serpent", "Souris"], 0.2)
 
 # Création du monde
 monde = Ecosystem()
-monde.add_population(plante, 100)
-monde.add_population(insecte, 20)
-monde.add_population(lapin, 10)
-monde.add_population(loup, 2)
-monde.add_population(souris, 15)
-monde.add_population(serpent, 5)
+monde.add_population(plante, 120)
+monde.add_population(insecte, 30)
+monde.add_population(souris, 20)
+monde.add_population(lapin, 15)
+monde.add_population(grenouille, 10)
+monde.add_population(serpent, 6)
+monde.add_population(loup, 3)
+monde.add_population(aigle, 2)
 
 # Simulation
 print("--- DÉBUT DE LA SIMULATION ---")
