@@ -1,4 +1,4 @@
-import random
+import random 
 import time 
 
 # --- 1. CLASSE SPECIES ---
@@ -91,13 +91,13 @@ class Ecosystem:
                 if compteur < 200:
                     new_babies.append(bebe)
 
-        if individual.species.diet:   # seulement les animaux
-            if individual.a_mange:
-                individual.hunger = 0
-            else:
-                individual.hunger += 1
-                if individual.hunger >= 5:
-                    individual.is_alive = False
+                    if individual.species.diet:   # seulement les animaux
+                        if individual.a_mange:
+                            individual.hunger = 0
+                        else:
+                            individual.hunger += 1
+                            if individual.hunger >= 5:
+                                individual.is_alive = False
 
         # --- Phase 2 : Nettoyage (VERSION "VIEILLE ÉCOLE") ---
         # C'est ici que j'ai changé le code pour le rendre plus lisible
