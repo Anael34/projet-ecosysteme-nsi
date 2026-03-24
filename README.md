@@ -33,22 +33,6 @@ python3 --version
 
 ------------------------------------------------------------------------
 
-# Structure du projet
-
-Exemple :
-
-    ecosystem-simulation/
-    │
-    ├── main.py
-    ├── Presentation.md
-    └── README.md
-
--   `main.py` : programme principal
--   `Presentation.md` : présentation du projet
--   `README.md` : protocole d'utilisation
-
-------------------------------------------------------------------------
-
 # Protocole d'utilisation
 
 ## 1. Lancer le programme
@@ -56,13 +40,13 @@ Exemple :
 Dans le terminal, se placer dans le dossier du projet puis exécuter :
 
 ``` bash
-python main.py
+python index.py
 ```
 
 ou
 
 ``` bash
-python3 main.py
+python3 index.py
 ```
 
 ------------------------------------------------------------------------
@@ -107,21 +91,6 @@ Exemple :
 
 ------------------------------------------------------------------------
 
-# Espèces présentes
-
-  Espèce       Rôle
-  ------------ -----------------------
-  Plante       Producteur
-  Insecte      Consommateur primaire
-  Souris       Herbivore
-  Lapin        Herbivore
-  Grenouille   Prédateur d'insectes
-  Serpent      Prédateur
-  Loup         Prédateur
-  Aigle        Superprédateur
-
-------------------------------------------------------------------------
-
 # Limite de population
 
 Afin d'éviter une explosion démographique, chaque espèce est limitée à
@@ -131,19 +100,10 @@ Afin d'éviter une explosion démographique, chaque espèce est limitée à
 
 # Arrêter la simulation
 
-La simulation s'arrête automatiquement après **200 jours**.
+La simulation s'arrête automatiquement après **un jours**.
 
 Vous pouvez aussi arrêter le programme avec :
 
     CTRL + C
 
 dans le terminal.
-
-------------------------------------------------------------------------
-
-# Améliorations possibles
-
--   ajouter une **visualisation graphique**
--   ajouter un **climat ou des saisons**
--   créer une **interface graphique**
--   ajouter une **carte spatiale de l'écosystème**

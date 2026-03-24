@@ -183,7 +183,15 @@ print("DÉBUT DE LA SIMULATION")
 monde.print_stats()
 
 # Demande à l'utilisateur le nombre de jours
-nb_jours = int(input("Combien de jours voulez-vous simuler ? "))
+while True:
+    try:
+        nb_jours = int(input("Combien de jours voulez-vous simuler ? "))
+        if nb_jours > 0:
+            break
+        else:
+            print("Veuillez entrer un nombre positif.")
+    except ValueError:
+        print("Veuillez entrer un nombre valide.")
 
 # Simulation sur plusieurs jours
 for jour in range(1, nb_jours + 1):
