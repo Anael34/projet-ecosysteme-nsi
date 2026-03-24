@@ -170,14 +170,13 @@ Ce projet permet de :
 
 ------------------------------------------------------------------------
 
-## Améliorations possibles
+## Améliorations et ouvertures possibles
 
 Plusieurs améliorations pourraient être ajoutées :
 
 -   ajout d'un **environnement (saisons, climat)**
--   gestion de **ressources limitées**
+-   Changement de l'échelle de la simulation (x10 jours)
 -   **visualisation graphique** des populations
--   simulation sur une **grille spatiale**
 -   interface utilisateur avec choix du nombre de départ d'individus par espèce
 
 ------------------------------------------------------------------------
@@ -190,4 +189,5 @@ temps.
 
 Il met en pratique les concepts de **programmation orientée objet**, de
 **probabilité** et de **simulation dynamique**, tout en illustrant les
-mécanismes fondamentaux de la **chaîne alimentaire**.
+mécanismes fondamentaux de la **chaîne alimentaire**.\
+Merci d'avoir pris le temps de lire notre projet !
