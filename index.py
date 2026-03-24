@@ -182,8 +182,11 @@ monde.add_population(aigle, 2)
 print("DÉBUT DE LA SIMULATION")
 monde.print_stats()
 
+# Demande à l'utilisateur le nombre de jours
+nb_jours = int(input("Combien de jours voulez-vous simuler ? "))
+
 # Simulation sur plusieurs jours
-for jour in range(1, 200):
+for jour in range(1, nb_jours + 1):
     print(f"\nJOUR {jour} :")
     monde.run_day()
     monde.print_stats()
