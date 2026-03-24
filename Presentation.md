@@ -149,12 +149,13 @@ individus maximum par espèce** est appliquée lors des reproductions.
 
 ------------------------------------------------------------------------
 
-## Technologies utilisées
+## Technologies utilisées & utilisation de l'IA
 
 -   **Python**
 -   Modules standards :
     -   `random` pour les probabilités
     -   `time` pour ralentir l'affichage
+-   Utilisation modérée de ChatGPT : Il nous a aidé à réfléchir à la conceptualisation du projet, en particulier la répartition des différentes classes en POO. Il a également aidé à corriger les fautes de notre programme et les mettres et évidence.
 
 ------------------------------------------------------------------------
 
